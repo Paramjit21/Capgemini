@@ -6,30 +6,53 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class RabbitTurtleRace {
-
+	/*
+	 * working but not properly
+	 */
+	static int run = 0;
+	static int tot = 0;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int run =0;
 		System.out.println("'+' is for turtle \t '*' is for Rabbit \n");
 		System.out.println("*  +");
 		ScheduledThreadPoolExecutor strt = 
-				(ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(2);
-		ScheduledThreadPoolExecutor med = 
-				(ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(2);
+				(ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(1);
+		ScheduledThreadPoolExecutor medd = 
+				(ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(1);
 		ScheduledThreadPoolExecutor end = 
-				(ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(2);
-		Runnable r = ()-> {
-			System.out.println("*  +");
+				(ScheduledThreadPoolExecutor)Executors.newScheduledThreadPool(1);
+		Runnable start = ()-> {
+			System.out.println("   T");
+			run++;
+			for(int i = 0;i<run;i++)
+			{
+				System.out.println();
+			}
+			System.out.println("R");				
 		};
-		Runnable r1 = ()-> {
+		Runnable med = ()-> {
 			strt.shutdown();
-			System.out.println("   +");
+			tot = run;
+			System.out.println("   T");
 		};
-		Runnable r2 = ()-> {
-			System.out.println("* ");
+		Runnable finish = ()-> {
+			medd.shutdown();
+			System.out.println("R");
+			run--;
+			for(int i = tot;i>run;i--)
+			{
+				System.out.println();
+			}
+			System.out.println("   T");
+			if(run == 0)
+			{
+				System.out.println("Turtle wins");
+				end.shutdown();
+			}
 		};
-		strt.scheduleAtFixedRate(r, 0, 1, TimeUnit.SECONDS);
-		med.scheduleAtFixedRate(r1, 5,1,TimeUnit.SECONDS);
+		strt.scheduleAtFixedRate(start, 0, 1, TimeUnit.SECONDS);
+		medd.scheduleAtFixedRate(med, 3,1,TimeUnit.SECONDS);
+		end.scheduleAtFixedRate(finish, 5,1,TimeUnit.SECONDS);
 
 	}
 
