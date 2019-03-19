@@ -1,4 +1,4 @@
-package com;
+package LabWork;
 
 import java.util.Scanner;
 
@@ -23,6 +23,7 @@ public class SumofCubes {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		SumofCubes ex = new SumofCubes();
-		ex4.cube(n);
+		ex.cube(n);
+		sc.close();
 	}
 }

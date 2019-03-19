@@ -1,4 +1,4 @@
-package com;
+package LabWork;
 
 import java.util.Scanner;
 
@@ -22,10 +22,15 @@ public class SecondSmallestValue {
 				}
 			}
 		}
-		for(int i=0;i < n;i++)
+		if(n == 1)
 		{
-			System.out.println(ar[i+1]);
-			break;
+			System.out.print("Largest and Second largest in array is --> ");
+			System.out.println(ar[0]);		
+		}
+		else
+		{
+			System.out.print("Second largest in array is --> ");
+			System.out.println(ar[1]);
 		}
 	}
 	@SuppressWarnings("resource")

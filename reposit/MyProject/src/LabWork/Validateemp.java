@@ -1,6 +1,5 @@
-package com;
+package LabWork;
 
-import java.util.Scanner;
 @SuppressWarnings("serial")
 class MyException extends Exception
 {

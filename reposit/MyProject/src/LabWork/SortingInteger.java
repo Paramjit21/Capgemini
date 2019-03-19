@@ -1,4 +1,4 @@
-package com;
+package LabWork;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class SortingInteger {
 		an integer array, reverse the numbers in the array and
 		returns the resulting array in sorted order
 		*/
-		int t,rev = 0,temp = 0;
+		int t,rev = 0;
 		for(int i=0;i<n;i++)
 		{
 			t=ar[i];
@@ -45,6 +45,7 @@ public class SortingInteger {
 
 		int n;
 		Scanner sc = new Scanner(System.in);
+		System.out.print("Eneter elemnts of array  --> ");
 		n = sc.nextInt();
 		int ar[] = new int[n];
 		for(int i=0;i<n;i++)
@@ -53,6 +54,7 @@ public class SortingInteger {
 		}
 		SortingInteger ex = new SortingInteger();
 		ex.getsorted(ar, n);
+		sc.close();
 
 	}
 

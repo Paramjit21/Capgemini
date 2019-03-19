@@ -1,4 +1,4 @@
-package com;
+package LabWork;
 
 @SuppressWarnings("serial")
 class Newexception extends Exception

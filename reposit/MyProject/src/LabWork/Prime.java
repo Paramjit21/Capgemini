@@ -1,4 +1,4 @@
-package com;
+package LabWork;
 
 import java.util.*;
 class Prime
@@ -11,7 +11,7 @@ class Prime
 	       Scanner s = new Scanner(System.in);
 	       System.out.print("Enter the number : ");
 	       int end = s.nextInt();
-	       System.out.println("List of prime numbers "+ end);
+	       System.out.println("List of prime numbers  upto "+ end);
 	       for (int i = 2; i <= end; i++) {
 	           if (isPrime(i)) {
 	               System.out.println(i);
