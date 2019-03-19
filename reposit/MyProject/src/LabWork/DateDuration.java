@@ -25,6 +25,7 @@ public class DateDuration {
 				System.out.println("In Days --> "+ (d.getDate() - newD.getDate()));
 				System.out.println("In Months -- >"+ (d.getMonth() - newD.getMonth()));
 				System.out.println("In years --> " +(d.getYear() - newD.getYear()));
+				System.out.println();
 			}catch (Exception e) {
 				// TODO: handle exception
 				System.out.println("Enter date in format 'mm/dd/yyyy'");

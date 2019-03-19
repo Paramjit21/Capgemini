@@ -14,11 +14,13 @@ public class ExecutorDemo {
 					System.out.println(Thread.currentThread().getName() + " is running...."); 
 				}
 		};
-		ExecutorService ex = Executors.newFixedThreadPool(5);
+		ExecutorService ex = Executors.newFixedThreadPool(2);
 		//ExecutorService exx = Executors.newFixedThreadPool(1);
+		Executors exx;
 		for(int i= 1; i <= 10; i++)
 		{
-			ex.execute(r);	// output : pool-1-thread-5 is running...
+			//ex.execute(r);	// output : pool-1-thread-5 is running...
+			
 		}
 	}
 }
