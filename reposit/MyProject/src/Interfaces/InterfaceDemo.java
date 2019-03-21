@@ -1,7 +1,6 @@
 package Interfaces;
 
 import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
 class Ab
