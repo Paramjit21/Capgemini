@@ -5,13 +5,14 @@ import java.util.Arrays;
 
 public class SortingAlfabet {
 
-	void sorting(String s[],int n)
+	void sorting(String s[])
 	{
 		/*
 			a method that can accept an array of String objects and sort in alphabetical order.
 			The elements in the left half should be completely in uppercase and
 			the elements in the right half should be completely in lower case. Return the resulting array
 		*/
+		int n = s.length;
 		Arrays.sort(s);
 		if(n%2 == 0)
 		{
@@ -40,18 +41,15 @@ public class SortingAlfabet {
 
 	public static void main(String ar[])
 	{
-		int n;
+		String str,strr[];
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter String --> ");
-		n = sc.nextInt();
-		String s[] = new String[n];
-		
-		for(int i=0;i<n;i++)
-		{
-			s[i] = sc.next();
-		}
+		str = sc.nextLine();
+		strr = str.split("");
 		SortingAlfabet ex1 = new SortingAlfabet();
-		ex1.sorting(s, n);
+//		for(String i : strr)
+//			System.out.println(i);
+		ex1.sorting(strr);
 		sc.close();
 	}
 }

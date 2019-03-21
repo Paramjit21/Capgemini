@@ -9,21 +9,21 @@ public class SortingInteger {
 		an integer array, reverse the numbers in the array and
 		returns the resulting array in sorted order
 		*/
-		int t,rev = 0;
-		for(int i=0;i<n;i++)
-		{
-			t=ar[i];
-			while(t!=0)
-			{
-				rev = rev * 10;
-		    rev = rev + t%10;
-		    t = t/10;
-			}
-			ar[i] = rev;
-			rev = 0;
-			t = 0;
-
-		}
+		int temp,rev = 0;
+//		for(int i=0;i<n;i++)
+//		{
+//			temp=ar[i];
+//			while(temp!=0)
+//			{
+//				rev = rev * 10;
+//				rev = rev + temp%10;
+//				temp = temp/10;
+//			}
+//			ar[i] = rev;
+//			rev = 0;
+//			
+//
+//		}
 		for(int i=0;i<n-1;i++)
 		{
 			for(int j=i+1;j<n;j++)
