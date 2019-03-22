@@ -28,7 +28,7 @@ class Race implements Runnable
 					System.out.println(tName + "  covered "+ dis);
 					dis += 2;
 				}
-				if(tName.equals("Hare") && flag == 1 && (dis > 50 || dis < 55))
+				if(true)//tName.equals("Hare") && flag == 1 && (dis > 50 || dis < 55))
 				{
 					try {
 						flag = 2;

@@ -1,23 +1,3 @@
-package Thread;
-
-class Race extends Thread
-{
-	int turSpeed = 1;
-	int rabSpeed = 5;
-	public void run()
-	{
-		
-	}
-}
-
-public class CallableFuture {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-}
 package MiniProjects;
 
 import java.util.ArrayList;
@@ -25,8 +5,11 @@ import java.util.ArrayList;
 class BrikWall extends Thread
 {
 	String name;
-	private ArrayList<String> wall = new ArrayList<String>();	
+	static ArrayList<String> wall = new ArrayList<String>();	
 	
+	public BrikWall() {
+		// TODO Auto-generated constructor stub
+	}
 	public BrikWall(String na) {
 		// TODO Auto-generated constructor stub
 		name = na;
@@ -34,8 +17,9 @@ class BrikWall extends Thread
 	public void run(){
 		synchronized (wall) {
 			wall.add(name);
-			System.out.println(name);
-			//wall.notify();
+			//System.out.println(name);
+			wall.notify();
+			//System.out.println(wall);
 		}
 	}
 	public void displayWall()
@@ -66,13 +50,19 @@ public class BrickWall {
 		BrikWall black = new BrikWall("Black");
 		red.start();
 		black.start();
-		for(int i = 0;i<50;i++)
+		for(int i = 0;i<25;i++)
 		{
-			red.run();
-			black.run();
+			try
+			{
+				black.run();
+				red.run();				
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Interpted");
+			}
+			
 		}
-		new BrikWall("").displayWall();
+		new BrikWall().displayWall();
 		}
 }
-
-

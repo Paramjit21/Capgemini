@@ -1,5 +1,7 @@
 package LabWork;
 
+import java.util.Scanner;
+
 @SuppressWarnings("serial")
 class Newexception extends Exception
 {
@@ -18,20 +20,25 @@ public class Validateage {
 		}
 		else
 		{
-		System.out.println("Age"+ age);
+		System.out.println("Age : "+ age);
 	    }
 	}
 	public static void main(String ar[])
 	{
 		Validateage ob=new Validateage();
+		Scanner sc = new Scanner(System.in);
+		int age;
+		System.out.print("Enter age : ");
+		age = sc.nextInt();
 		try
 		{
-			ob.setAge(10);
+			ob.setAge(age);
 		}
 		catch(Newexception e)
 		{
 			System.out.println("Invalid age");
 		}
+		sc.close();
 	}
 	
 }
