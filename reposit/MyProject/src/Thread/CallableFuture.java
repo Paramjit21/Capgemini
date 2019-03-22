@@ -18,7 +18,7 @@ public class CallableFuture {
 	}
 
 }
-package MiniProjects;
+/*package MiniProjects;
 
 import java.util.ArrayList;
 
@@ -73,6 +73,6 @@ public class BrickWall {
 		}
 		new BrikWall("").displayWall();
 		}
-}
+}*/
 
 

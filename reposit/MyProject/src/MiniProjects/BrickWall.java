@@ -10,7 +10,7 @@ class BrikWall extends Thread
 	public BrikWall() {
 		// TODO Auto-generated constructor stub
 	}
-	public BrikWall(String na) {
+	public BrikWall(String na ) {
 		// TODO Auto-generated constructor stub
 		name = na;
 	}
